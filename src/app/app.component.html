@@ -1,0 +1,42 @@
+<div style="height: calc(100vh - 65px);"> 
+  <mat-toolbar color="white">
+    <div fxShow="true" fxHide.gt-sm="true">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+
+    <a mat-button class="companyName" routerLink="/">
+      <span>Ashish Agrawal</span>
+    </a>
+    <span class="example-spacer"></span>
+    <div fxShow="true" fxHide.lt-md="true" class="toolbarlinks">
+        <a mat-button routerLink="about-me">About me</a>
+        <a mat-button routerLink="work-ex">Work Experience</a>
+        <a mat-button routerLink="projects">Projects</a>
+        <a mat-button routerLink="blogs">Blogs</a>
+        <a mat-button routerLink="fun">My fun side</a>
+        <a mat-button routerLink="contact">Contact me</a>
+    </div>
+
+  </mat-toolbar>
+  <mat-sidenav-container fxFlexFill class="example-container">
+
+    <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over"  opened="false" fxHide.gt-sm="true">
+      <div fxLayout="column">
+          <a mat-button routerLink="about-me">About me</a>
+          <a mat-button routerLink="work-ex">Work Experience</a>
+          <a mat-button routerLink="projects">Projects</a>
+          <a mat-button routerLink="blogs">Blogs</a>
+          <a mat-button routerLink="fun">My fun side</a>
+          <a mat-button routerLink="contact">Contact me</a>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+     <app-about-me></app-about-me>
+     
+     <hr>
+     <app-work-ex></app-work-ex>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
